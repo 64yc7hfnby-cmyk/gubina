@@ -15,7 +15,7 @@
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
         body { background-color: var(--bg); color: var(--text); line-height: 1.6; }
         
-        header { background: var(--primary); color: var(--white); padding: 1rem 0; sticky: top; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        header { background: var(--primary); color: var(--white); padding: 1rem 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
         nav { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-around; flex-wrap: wrap; }
         nav a { color: var(--white); text-decoration: none; font-weight: bold; padding: 0.5rem 1rem; border-radius: 4px; transition: 0.3s; }
         nav a:hover { background: var(--accent); color: var(--primary); }
@@ -29,16 +29,14 @@
         ul { margin-bottom: 1rem; padding-left: 1.5rem; }
         li { margin-bottom: 0.5rem; }
 
-        /* Стиль для места под фото */
-        .photo-placeholder { background: #e2e8f0; border: 3px dashed #cbd5e1; height: 350px; display: flex; align-items: center; justify-content: center; font-size: 5rem; font-weight: bold; color: #94a3b8; margin: 1.5rem 0; border-radius: 6px; position: relative; }
-        .photo-placeholder::after { content: 'Место для фото / схемы'; position: absolute; bottom: 15px; font-size: 1rem; color: #64748b; font-weight: normal; }
+        img { width: 100%; max-height: 450px; object-fit: cover; border-radius: 8px; margin: 1.5rem 0; background: #e2e8f0; display: block; }
 
         table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 1rem; }
         th, td { border: 1px solid #cbd5e1; padding: 0.75rem; text-align: left; }
         th { background-color: #f1f5f9; color: var(--primary); }
         
-        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
-        @media (max-width: 768px) { .grid { grid-template-columns: 1fr; } .photo-placeholder { height: 200px; } }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center; }
+        @media (max-width: 768px) { .grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
@@ -57,7 +55,7 @@
         <!-- СТРАНИЦА 1: ГЛАВНАЯ -->
         <section id="main">
             <h1>Биомеханика аджилити: как физика управляет собакой на трассе</h1>
-            <img src="foto1.jpg" style="width:100%; border-radius:8px; margin:20px 0;">
+            <img src="photo1" alt="Главное фото">
             <p><strong>Аджилити</strong> — это не просто скоростной бег под руководством хендлера, а сложнейшее испытание для опорно-двигательного аппарата животного. Проходя полосу из 15–22 препятствий длиной до 220 метров, собака на подсознательном уровне каждую секунду решает уравнения механики.</p>
             <p>В отличие от человека, опирающегося на две ноги, собака имеет четырёхточечную опору. Это делает её базово более устойчивой в покое, однако узкие и динамические спортивные снаряды резко сужают площадь опоры и предъявляют экстремальные требования к координации движений.</p>
         </section>
@@ -74,7 +72,7 @@
                         <li><strong>Вращательное равновесие:</strong> Сумма всех моментов сил равна нулю, благодаря чему собака не опрокидывается вперед, назад или на бок.</li>
                     </ul>
                 </div>
-                <img src="foto3.jpg" style="width:100%; border-radius:8px; margin:20px 0;">
+                <img src="photo3" alt="Схема центра тяжести">
             </div>
 
             <h3>Биомеханические инструменты балансировки</h3>
@@ -121,19 +119,19 @@
                 </tbody>
             </table>
             
-            <img src="foto3.jpg" style="width:100%; border-radius:8px; margin:20px 0;">
+            <img src="photo4" alt="Фото на снарядах">
         </section>
 
         <!-- СТРАНИЦА 4: ПОРОДНЫЕ ОСОБЕННОСТИ -->
         <section id="breeds">
             <h2>Породные особенности: Геометрия против скорости</h2>
             <div class="grid">
-                <img src="foto6.jpg" style="width:100%; border-radius:8px; margin:20px 0;">
+                <img src="photo6" alt="Разные породы">
                 <div>
                     <p>Строение тела напрямую влияет на успешность собаки в физических дисциплинах:</p>
                     <ul>
                         <li><strong>Коротконогие породы (Корги, Таксы, Джек-расселы):</strong> Обладают низким ЦТ и вытянутым телом. У них очень высокая базовая устойчивость на узком буме или качелях. Минусы: короткие лапы ограничивают высоту прыжка, а длинный корпус усложняет прохождение слалома.</li>
-                        <li><strong>Высоконогие породы квадратного формата (Бордер-колли, Малинуа):</strong> Их ЦТ расположен выше, что снижает устойчивость на узких поверхностях. Однако это дает колоссальное преимущество в скорости, длине прыжка, маневренности и перераспределении момента инерции. Бордер-колли признаны лидерами мирового аджилити именно за счет идеального соотношения пропорций и координации.</li>
+                        <li><strong>Высоконогие породы квадратного формата (Бордер-колли, Малинуа):</strong> Их ЦТ расположен выше, что снижает устойчивость на узмых поверхностях. Однако это дает колоссальное преимущество в скорости, длине прыжка, маневренности и перераспределении момента инерции. Бордер-колли признаны лидерами мирового аджилити именно за счет идеального соотношения пропорций и координации.</li>
                     </ul>
                 </div>
             </div>
